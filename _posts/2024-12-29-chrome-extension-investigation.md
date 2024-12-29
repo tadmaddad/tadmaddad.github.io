@@ -13,6 +13,7 @@ author: Tad
 先日、Cyberhaven社のChrome拡張機能の一部が改ざんされ、ユーザー情報が不正に収集されているという報告を目にしました。Cyberhaven社におけるインシデントについて少しだけ以下で触れていますが、詳細は同社のウェブサイトをご確認ください。なお、本備忘録では、今回の事象がCyberhaven社だけではなく、他のChrome拡張機能においても同様の事象が起きていることが判明しましたので、そのあたり少し調べてみた記録となります。
 
 **Cyberhaven社について**
+
 Cyberhaven社は、データの流れを可視化し、不正な移動をリアルタイムで検出・防止する「Data Detection and Response（DDR）」を提供するセキュリティ企業とのこと。
 
 **Cyberhaven社CEOの声明（要約）**
@@ -34,6 +35,7 @@ Cyberhaven社は、データの流れを可視化し、不正な移動をリア�
 攻撃者はChrome Web Store Developer Supportを騙ったフィッシングメールをCyberhaven社の従業員（Chrome Extension 開発者）に送付。従業員はメールのリンクをクリックした後にGoogle認証ページに遷移し、悪意あるサードパーティアプリケーション（"Privacy Policy Extension"）に対して意図せず意図せず認証した模様。なお、この従業員のGoogleアカウントについてはGoogle Advanced Protectionが有効であり、またMFAも設定されていたが、今回MFAのプロンプトは表示されなかったとのこと。よって、Cyberhaven社曰く、従業員の認証情報が侵害された訳ではないとのこと。
 
 - **Uploading the malicious extension：**
+- 
 攻撃者は、悪意あるサードパーティアプリケーションを通じて必要な権限を入手し、Chrome Web Storeに不正なChrome拡張機能をアップロード。その後、Chrome Web Storeのセキュリティ審査プロセスを経て、この不正な拡張機能が公開承認されたとのこと。不正なChrome拡張機能（バージョン：24.10.4）は、正規のCyberhaven社公式のChrome拡張機能をベースにしており、この正規の拡張機能に不正なコードを追加したとのこと。
 
    - 不正なChrome拡張機能のハッシュ値：DDF8C9C72B1B1061221A597168f9BB2C2BA09D38D7B3405E1DACE37AF1587944
@@ -106,6 +108,7 @@ uvoice[.]live
 不正なコードの動きだったり、さらに深い調査については、恐らく後日どこかのセキュリティベンダーさんが公開するでしょうから、それを待つことにします。
 
 ## Yaraルール
+
 使う人いないかもですが、Yaraルールも書いてみました。
 
 ```
