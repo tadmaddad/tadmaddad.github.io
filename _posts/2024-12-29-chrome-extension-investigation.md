@@ -104,6 +104,25 @@ uvoice[.]live
 
 不正なコードの動きだったり、さらに深い調査については、恐らく後日どこかのセキュリティベンダーさんが公開するでしょうから、それを待つことにします。
 
+**Yaraルール**
+使う人いないかもですが、Yaraルールも書いてみました。
+
+```
+rule mal_crx_hunt {
+    meta:
+        description = "This Yara rule is designed to detect potentially malicious Chrome extensions by identifying files containing specific strings."
+        author = "@tadmaddad"
+        date = "2024-12-29"
+        version = "1.0"
+    strings:
+        $a = "HTTP error! Status"
+        $b = "Data successfully stored!"
+        $c = "An error occurred:"
+    condition:
+        all of them
+}
+```
+
 **IoC情報**
 - C&C
   - 149.28.124[.]84
