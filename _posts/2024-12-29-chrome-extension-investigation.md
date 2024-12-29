@@ -121,9 +121,9 @@ rule mal_crx_hunt {
         date = "2024-12-29"
         version = "1.0"
     strings:
-        $a = "HTTP error! Status"
-        $b = "Data successfully stored!"
-        $c = "An error occurred:"
+        $str1 = "HTTP error! Status"
+        $str2 = "Data successfully stored!"
+        $str3 = "An error occurred:"
     condition:
         all of them
 }
