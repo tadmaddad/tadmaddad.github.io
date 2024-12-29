@@ -66,7 +66,7 @@ uvoice[.]live
 **その他の改ざんされた拡張機能の有無調査**
 
 上記のポストを踏まえ、他にも改ざんされた拡張機能が存在すると考え調査を実施。まずは、VTで各ドメインを調査してみたところ、ほとんどのドメインがここ一ヶ月以内で取得されたものであることが判明した。
-![vt_search_cyberhavenext](assets/img/2024-12-29-vt_search_cyberhavenext.png)
+![vt_search_cyberhavenext](/assets/img/2024-12-29-vt_search_cyberhavenext.png)
 
 
 | ドメイン名                     | ドメイン取得日    |
@@ -86,16 +86,16 @@ uvoice[.]live
 | uvoice[.]live             | 2024-12-25 |
 
 なお、これらドメインのほとんどがIPアドレス`149.28.124[.]84`に紐づいており、2024/12/29時点（UTCだと12/28）においても、新たなドメインが紐づけられており、キャンペーンは継続中のようにも思われます。
-![vt_search_ip](assets/img/2024-12-29-vt_search_ip.png)
+![vt_search_ip](/assets/img/2024-12-29-vt_search_ip.png)
 
 また、上記ドメインはいずれもCyberhaven社のケースと同様に改ざんされた拡張機能に関連したものと思われたことから、ドメイン文字列を使い、chromeウェブストア上で拡張機能を検索してみたところ、幾つかの拡張機能が見つかりました。しかし、この時点ではこれら拡張機能が改ざんされているかは不明だったことから、拡張機能の更新日が新しくなく、且つドメイン作成日と近しい拡張機能に絞って、該当拡張機能をダウンロードすることにしました。
 
 拡張機能のダウンロードは、同じくChrome拡張機能である「Chrome extension source viewer(CRX)」を使って行った。この拡張機能は、chromeウェブストアにて任意の拡張機能のページにて、「CRX」ボタンをクリックすると、拡張機能のダウンロードかソース閲覧ができます。
-![crx_download](assets/img/202412-29-crx_download.png)
+![crx_download](/assets/img/202412-29-crx_download.png)
 
 
 まずは、拡張機能のダウンロード（zipファイル）を行ったのちに拡張機能を構成するファイルのうち、.jsファイルに着目して内容を確認してみたところ、Cyberhaven社のケース同様に改ざんらしき不正なコードを発見しました。
-![crx_code](assets/img/2024-12-29-crx_malicious_code.png)
+![crx_code](/assets/img/2024-12-29-crx_malicious_code.png)
 
 **IoC情報**
 - C&C
