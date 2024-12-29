@@ -39,6 +39,7 @@ Cyberhaven社は、データの流れを可視化し、不正な移動をリア�
 
    - 不正なChrome拡張機能のハッシュ値：DDF8C9C72B1B1061221A597168f9BB2C2BA09D38D7B3405E1DACE37AF1587944
 
+
 - **Analysis of the malicious payload：**
 不正なChrome拡張機能には、2つのファイルで構成されており、一つは正規のworker.jsファイルを改変し、C&Cサーバに接続して構成情報をローカルストレージにダウンロード。もう一つは、新たに追加されたcontent.jsファイルで、特定のウェブサイトのユーザデータを収集した後に、worker.jsを通じて入手した構成情報に含まれるサイトに対して送信する模様。なお、Cyberhaven社の調査では、ターゲットとなっていた特定のウェブサイトは、"*.facebook.com"関連のドメインとのことで、他のウェブサイトが標的になったケースは確認されておらず、今回の攻撃が特定のターゲットを狙ったものではなく、facebook.comの広告ユーザーを対象とした一般的な攻撃であると考えられるとのこと。
 
@@ -46,7 +47,9 @@ Cyberhaven社は、データの流れを可視化し、不正な移動をリア�
    - content.js のハッシュ値：AC5CC8BCC05AC27A8F189134C2E3300863B317FB
    - C&C：cyberhavenext[.]pro
 
+
 参考: [Cyberhaven’s preliminary analysis of the recent malicious Chrome extension](https://www.cyberhaven.com/engineering-blog/cyberhavens-preliminary-analysis-of-the-recent-malicious-chrome-extension)
+
 
 #### X上での関連ツイート
 
@@ -106,8 +109,8 @@ uvoice[.]live
 
 不正なコードの動きだったり、さらに深い調査については、恐らく後日どこかのセキュリティベンダーさんが公開するでしょうから、それを待つことにします。
 
-#### Yaraルール
 
+#### Yaraルール
 使う人いないかもですが、Yaraルールも書いてみました。
 
 ```
@@ -126,10 +129,12 @@ rule mal_crx_hunt {
 }
 ```
 
+
 #### IoC情報
 - C&C
   - 149.28.124[.]84
   - 149.248.2[.]160
+
 
 #### 更新履歴
 - 2024年12月29日 PM 新規作成
