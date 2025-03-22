@@ -4,7 +4,7 @@ title: 中国のセキュリティレポートから見える"もう一つのAPT
 subtitle: APT from the Other Side "What Chinese Reports Reveal"
 share-img: /assets/img/path.jpg
 date: 2025-03-22 17:10:00 +0900
-tags: [Security][APT]
+tags: [Security],[APT]
 author: Tad
 ---
 
